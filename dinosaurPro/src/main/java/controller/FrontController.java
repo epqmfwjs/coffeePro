@@ -37,7 +37,7 @@ public class FrontController extends HttpServlet {
 		String requestURI = request.getRequestURI().toString();
 		String command = requestURI.substring(request.getContextPath().length());
 				
-		//위해성생성한 주소값으로  CommandHandler 인터페이스 메소드 호출해서 각 핸들러 연결 서비스메소드호출이용 로직수행 결과 값 받아서 최종보여줄 viewPage 저장
+		//위에서 생성한 주소값으로  CommandHandler 인터페이스 메소드 호출해서 각 핸들러 연결 서비스메소드호출이용 로직수행 결과 값 받아서 최종보여줄 viewPage 저장
 		if(requestURI.indexOf(request.getContextPath())==0) {
 			CommandHandler handler = map.get(command);
 			viewPage = handler.Start(request, response);
