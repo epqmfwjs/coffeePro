@@ -34,11 +34,9 @@ public class MemberDAO {
         
        if (result == 1) {            
     	   returnPage = "okJoin.jsp";
-			System.out.println("데이터 입력 완료!");
 			conn.commit();
 			}else {            
-			returnPage = "login.jsp";
-			System.out.println("데이터 입력 실패!");            
+			returnPage = "login.jsp";            
 			conn.rollback();
 		}       
         pstmt.close();
@@ -64,7 +62,6 @@ public class MemberDAO {
 	                String dbId = rs.getString("id");
 	                String dbPw = rs.getString("pw");
 	                result = Uid.equals(dbId) && Upw.equals(dbPw);
-	                System.out.println("셀렉트 끝");
 	            }
 	        }
 	        pstmt.close();
